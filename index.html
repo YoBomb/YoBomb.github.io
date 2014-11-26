@@ -21,11 +21,29 @@
   <header>
       <img src="img/logo.svg">
   </header>
+  <div class="container">
 
+    <p> Know a friend who uses Yo? Annoy them by spamming them with innocent, but highly annoying Yo's! Simply enter the Yo username and click the button and Yo's will be sent immidietly.
+    </p>
+    <p> For best results YoBomb them early in the morning when their sound is sure to be on because of their alarm!</p>
+    <input type="text" id="yo_user" class="field"></input>
+    <button id="yo_send" type="submit">Yo</button>
+
+  </div>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
   <script src="js/backend.js"></script>
+  <script>
+  $( document ).ready(function() {
+    console.log( "ready!" );
+
+    $("button").click(function() {
+      console.log("clicked");
+      activate($(input#yo_user).val());
+    });
+  });
+  </script>
 </body>
 </html>

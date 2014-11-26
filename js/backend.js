@@ -4,7 +4,7 @@ yoname;
 function yo(api_token) {
 	xhr = new XMLHttpRequest();
 	link = links[Math.floor(Math.random() * links.length)]
-	params = "api_token=" + api_token + "&username=" + yoname+"&link=http://martinkubat.com/YoBomb#"+yoname;
+	params = "api_token=" + api_token + "&username=" + yoname+"&link=http://martinkubat.com/YoBomb#Y_"+yoname;
 	xhr.open("POST", "http://api.justyo.co/yo/", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhr.send(params);

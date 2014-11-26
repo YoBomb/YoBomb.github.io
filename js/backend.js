@@ -9,10 +9,10 @@ function yo(api_token) {
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhr.send(params);
 
-	document.getElementById("anim").style.background = "#000000";
+	document.getElementById("yo_send").style.background = "#000000";
 
 	setTimeout(function(){
-		document.getElementById("anim").style.background = "#E54B4B";
+		document.getElementById("yo_send").style.background = "#E54B4B";
 	},100);
 
 	return true;

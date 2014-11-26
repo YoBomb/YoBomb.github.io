@@ -15,7 +15,6 @@ header{
   background:#E54B4B;
   text-align:center;
   margin-bottom:20px;
-  transition: background 50ms;
 }
 
 
@@ -56,6 +55,7 @@ button{
   display:block;
   margin-top:10px;
   font-family: 'Montserrat', sans-serif;
+  transition: background 50ms;
 }
 
 footer {

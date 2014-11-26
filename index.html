@@ -18,17 +18,26 @@
   <![endif]-->
 </head>
 <body>
-  <header>
+  <header id="anim">
       <img src="img/logo.svg">
   </header>
   <div class="container">
-
-    <p> Know a friend who uses Yo? Annoy them by spamming them with innocent, but highly annoying Yo's! Simply enter the Yo username and click the button and Yo's will be sent immidietly.
+    <script>
+      links = ["http://i.imgur.com/wDOJJvG.jpg", "http://fc04.deviantart.net/fs71/f/2012/277/2/b/troll_card_by_flazar2000-d5gta1s.jpg","http://new1.fjcdn.com/comments/Lt+op+_a3822d1960ad336a6c1b6d76343a2ea8.jpg","http://i2.kym-cdn.com/photos/images/original/000/056/679/U_Mad2.jpg","http://i1.kym-cdn.com/photos/images/original/000/061/954/Kobe-U-Mad20110725-22047-1i31pz7.jpg"];
+      if (window.location.hash) {
+          document.write("<p class='bomb'>Someone YoBombed you!</p><img class='troll' src='"+(links[Math.floor(Math.random() * links.length)])+"'><h2>Return the favour</h2>");
+      }
+    </script>
+    <p> Know a friend who uses Yo? Annoy them by spamming them with innocent, but highly annoying Yo's! Simply enter the Yo username and click the button and Yo's will be sent immediately.
     </p>
     <p> For best results YoBomb them early in the morning when their sound is sure to be on because of their alarm!</p>
-    <input type="text" id="yo_user" class="field"></input>
-    <button id="yo_send" type="submit">Yo</button>
+    <input type="text" id="yo_user" class="field" placeholder="Yo username" autofocus></input>
+    <button id="yo_send" type="submit">YOBOMB</button>
 
+    <footer>
+
+      <p><a href="https://github.com/martinkubat/YoBomb">Source</a><br>by <a href="http://martinkubat.com">Martin Kubat</a> and <a href="http://github.com/divailo">Ivaylo Hristov</a>
+      </footer>
   </div>
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -36,16 +45,32 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/backend.js"></script>
   <script>
-  $( document ).ready(function() {
-    console.log( "ready!" );
+  $(document).ready(function() {
 
-    $("button").click(function() {
-      console.log("clicked");
-      activate(5, $(input#yo_user).val());
+    $("#yo_send").click(function(){
+      if ($("input#yo_user").val() != ""){
+        var user = $("input#yo_user").val();
+        activate(user, 15);
+      } else {
+        $("input#yo_user").focus();
+      }
+
+
+
     });
+
+
+    $("input#yo_user").on('input', function() {
+
+      if ($("input#yo_user").val() != ""){
+        $("#yo_send").css("background","#E54B4B");
+      } else {
+        $("#yo_send").css("background","#EDEDED");
+      }
+    });
+
   });
 
-  activate()
   </script>
 </body>
 </html>

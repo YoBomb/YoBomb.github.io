@@ -1,21 +1,33 @@
 var api_token = "cfff0f6e-dbf5-44c9-884c-188e24ad34d2",
-yoname = "Divailo",
-link = "http://owlee.me";
-
+yoname;
 
 function yo(api_token) {
 	xhr = new XMLHttpRequest();
-	params = "api_token=" + api_token + "&username=" + yoname + "&link=" + link; 
+	link = links[Math.floor(Math.random() * links.length)]
+	params = "api_token=" + api_token + "&username=" + yoname+"&link=http://martinkubat.com/YoBomb#"+yoname;
 	xhr.open("POST", "http://api.justyo.co/yo/", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhr.send(params);
+
+	document.getElementById("anim").style.background = "#000000";
+
+	setTimeout(function(){
+		document.getElementById("anim").style.background = "#E54B4B";
+	},100);
+
+	return true;
 }
 
-function activate(yoname, link, n){
-yoname1 = yoname;
-link1 = link;
+function activate(input_user, n){
 
-	for(i = 0; i<n; i++){
+	yoname = input_user;
+
+	if (n > 0){
 		yo(api_token);
+		setTimeout(function() {
+			activate(input_user,n-1)
+			console.log(n)
+		}, 600);
 	}
+
 }

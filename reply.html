@@ -29,7 +29,7 @@
       }
           document.write("<p class='bomb'>Someone YoBombed you!</p>");
           if (getURLParameter('msg') != null){
-          document.write("<p class='msg'> "+getURLParameter('msg')+"</p>");
+          document.write("<p class='msg'> "+getURLParameter('msg').toUpperCase()+"</p>");
         }
           document.write("<img class='troll' src='"+(links[Math.floor(Math.random() * links.length)])+"'><h2>Return the favour</h2>");
 

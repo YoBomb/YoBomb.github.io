@@ -36,6 +36,7 @@ input{
   border-radius:3px;
   text-transform: uppercase;
   text-align:center;
+  margin-top:5px;
 }
 
 input:focus, button:active{
@@ -79,4 +80,11 @@ p.bomb{
   text-align: center;
   font-size: 19pt;
   margin: 10px;
+}
+
+p.msg{
+  background:rgba(229, 75, 75, 0.12);
+  padding:10px;
+  border-radius:3px;
+  text-align:center;
 }

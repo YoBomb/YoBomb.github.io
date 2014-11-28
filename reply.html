@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YoBomb</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <header id="anim">
+      <img src="img/logo.svg">
+  </header>
+  <div class="container">
+    <script>
+      links = ["http://i.imgur.com/wDOJJvG.jpg", "http://fc04.deviantart.net/fs71/f/2012/277/2/b/troll_card_by_flazar2000-d5gta1s.jpg","http://new1.fjcdn.com/comments/Lt+op+_a3822d1960ad336a6c1b6d76343a2ea8.jpg","http://i2.kym-cdn.com/photos/images/original/000/056/679/U_Mad2.jpg","http://i1.kym-cdn.com/photos/images/original/000/061/954/Kobe-U-Mad20110725-22047-1i31pz7.jpg"];
+      function getURLParameter(name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+      }
+          document.write("<p class='bomb'>Someone YoBombed you!</p><p class='msg'> "+getURLParameter('msg')+"</p><img class='troll' src='"+(links[Math.floor(Math.random() * links.length)])+"'><h2>Return the favour</h2>");
+
+    </script>
+    <p> Know a friend who uses Yo? Annoy them by spamming them with innocent, but highly annoying Yo's! Simply enter the Yo username and click the button and Yo's will be sent immediately.
+    </p>
+    <p> For best results YoBomb them early in the morning when their sound is sure to be on because of their alarm!</p>
+    <input type="text" id="yo_user" class="field" placeholder="Yo username" autofocus></input>
+    <input type="text" id="yo_msg" class="field" placeholder="Yo message (optional)"></input>
+    <button id="yo_send" type="submit">YOBOMB</button>
+
+    <footer>
+
+      <p><a href="https://github.com/martinkubat/YoBomb">Source</a><br>by <a href="http://martinkubat.com">Martin Kubat</a> and <a href="http://github.com/divailo">Ivaylo Hristov</a>
+      </footer>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/backend.js"></script>
+    <script>
+    $(document).ready(function() {
+
+      $("#yo_send").click(function(){
+        if ($("input#yo_user").val() != ""){
+          var user = $("input#yo_user").val();
+          var msg = $("input#yo_msg").val();
+          activate(user, msg, 15);
+        } else {
+          $("input#yo_user").focus();
+        }
+
+
+
+      });
+
+
+      $("input#yo_user").on('input', function() {
+
+        if ($("input#yo_user").val() != ""){
+          $("#yo_send").css("background","#E54B4B");
+        } else {
+          $("#yo_send").css("background","#EDEDED");
+        }
+      });
+
+    });
+
+    </script>
+  </body>
+  </html>

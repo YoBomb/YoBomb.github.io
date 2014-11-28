@@ -27,7 +27,11 @@
       function getURLParameter(name) {
         return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
       }
-          document.write("<p class='bomb'>Someone YoBombed you!</p><p class='msg'> "+getURLParameter('msg')+"</p><img class='troll' src='"+(links[Math.floor(Math.random() * links.length)])+"'><h2>Return the favour</h2>");
+          document.write("<p class='bomb'>Someone YoBombed you!</p>");
+          if (getURLParameter('msg') != null){
+          document.write("<p class='msg'> "+getURLParameter('msg')+"</p>");
+        }
+          document.write("<img class='troll' src='"+(links[Math.floor(Math.random() * links.length)])+"'><h2>Return the favour</h2>");
 
     </script>
     <p> Know a friend who uses Yo? Annoy them by spamming them with innocent, but highly annoying Yo's! Simply enter the Yo username and click the button and Yo's will be sent immediately.
